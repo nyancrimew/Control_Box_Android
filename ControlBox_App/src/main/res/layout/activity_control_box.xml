@@ -14,33 +14,36 @@
         android:id="@+id/btn_main_rebooter"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:onClick="startRebooter"
-        android:text="@string/btm_main_rebooter" />
+        android:text="@string/btm_main_rebooter"
+        android:background="@drawable/bg_button" />
 
 
     <Button
         android:id="@+id/btn_main_lookandfeel"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/btn_main_rebooter"
         android:layout_centerHorizontal="true"
         android:onClick="startLookAndFeel"
-        android:text="@string/btn_main_lookandfeel" />
+        android:text="@string/btn_main_lookandfeel"
+        android:background="@drawable/bg_button" />
 
     <Button
         android:id="@+id/btn_main_multiuser"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/btn_main_lookandfeel"
         android:layout_centerHorizontal="true"
         android:onClick="startMultiuser"
-        android:text="@string/btn_main_multiuser" />
+        android:text="@string/btn_main_multiuser"
+        android:background="@drawable/bg_button" />
 
     <TextView
         android:id="@+id/main_credits"

@@ -25,6 +25,5 @@
     <string name="no_root_msg">Ihr Gerät ist nicht GEROOTET :(</string>
     <string name="switch_user_header">Benutzer wechseln</string>
     <string name="switch_user_warning">ACHTUNG: Dies funktioniert möglicherweise nicht auf allen Geräten! Falls nach dem Wechsel Probleme auftreten, können sie mit einem Neustart zurück zu ihrem Hauptbenutzer wechseln!</string>
-    <string name="txt_dpi_demo_value"></string>
     <string name="table_header_iscurrent">Benutzer aktiv?</string>
 </resources>
