@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Control Box</string>
+    <string name="btn_reboot">Reboot</string>
+    <string name="btn_reboot_recovery">Reboot to recovery</string>
+    <string name="btn_reboot_soft">Softreboot</string>
+    <string name="btm_main_rebooter">Rebooter</string>
+    <string name="btn_main_lookandfeel"><![CDATA[Look & Feel]]></string>
+    <string name="dpi_display"><b>Current LCD Density:</b> %ddpi</string>
+    <string name="integerString" translatable="false">%d</string>
+    <string name="dpi_header_text">LCD Density</string>
+    <string name="btn_set_dpi">Set new DPI</string>
+    <string name="dpi_description">Change your LCD density without any need to reboot!</string>
+    <string name="activity_label_rebooter">Rebooter</string>
+    <string name="activity_label_lookandfeel"><![CDATA[Look & Feel]]></string>
+    <string name="btn_restart_systemui">Restart SystemUI</string>
+    <string name="btn_shutdown">Shutdown</string>
+    <string name="activity_label_multiuser">Multiuser</string>
+    <string name="btn_main_multiuser">Multiuser</string>
+    <string name="users_header">Users</string>
+    <string name="table_header_uid">UserID</string>
+    <string name="table_header_uname">UserName</string>
+    <string name="table_header_iscurrent">User is current</string>
+    <string name="main_credits">Control Box is an app created by Deletescape (Till Kottmann)\n Copyright © 2016 Deletescape Media. All rights reserved.</string>
+    <string name="no_root_msg">Your device is not ROOTED :(</string>
+    <string name="switch_user_header">Switch User</string>
+    <string name="switch_user_warning">WARNING: This might not work on all devices! If you experience any problems after switching you will get back to your main user after a reboot!</string>
+    <string name="btn_switch_user">Switch to new UID</string>
+    <string name="dpiDisplay_demo_string">Current LCD Density: xxxdpi</string>
+    <string name="txt_dpi_demo_value" translatable="false">xxx</string>
+    <string name="txt_uid_default_value" translatable="false">0</string>
+</resources>
