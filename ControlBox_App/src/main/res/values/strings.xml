@@ -28,4 +28,6 @@
     <string name="dpiDisplay_demo_string">Current LCD Density: xxxdpi</string>
     <string name="txt_dpi_demo_value" translatable="false">xxx</string>
     <string name="txt_uid_default_value" translatable="false">0</string>
+    <string name="add_user_header">Add User</string>
+    <string name="btn_add_user">Add user with name</string>
 </resources>

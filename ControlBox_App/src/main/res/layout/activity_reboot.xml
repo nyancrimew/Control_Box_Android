@@ -13,10 +13,11 @@
         android:id="@+id/btn_reboot"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:background="@drawable/bg_button"
         android:onClick="rebootNormal"
         android:text="@string/btn_reboot" />
 
@@ -24,10 +25,11 @@
         android:id="@+id/btn_reboot_recovery"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn_reboot"
+        android:background="@drawable/bg_button"
         android:onClick="rebootRecovery"
         android:text="@string/btn_reboot_recovery" />
 
@@ -35,10 +37,11 @@
         android:id="@+id/btn_reboot_soft"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn_reboot_recovery"
+        android:background="@drawable/bg_button"
         android:onClick="rebootSoft"
         android:text="@string/btn_reboot_soft" />
 
@@ -46,10 +49,11 @@
         android:id="@+id/btn_restart_systemui"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn_reboot_soft"
+        android:background="@drawable/bg_button"
         android:onClick="restartSystemUI"
         android:text="@string/btn_restart_systemui" />
 
@@ -57,10 +61,11 @@
         android:id="@+id/btn_shutdown"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn_restart_systemui"
+        android:background="@drawable/bg_button"
         android:onClick="Shutdown"
         android:text="@string/btn_shutdown" />
 </RelativeLayout>

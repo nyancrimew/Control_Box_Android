@@ -15,26 +15,32 @@ public class LookAndFeel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_look_and_feel);
 
-        TextView dpiDisplay = (TextView) findViewById(R.id.dpiDisplay);
-        int density = SuUtil.getDensity();
-        dpiDisplay.setText(String.format(getString(R.string.dpi_display), density));
-        final EditText txtDPI = (EditText) findViewById(R.id.txt_dpi);
-        txtDPI.setText(String.format(getString(R.string.integerString), density));
-        txtDPI.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        final TextView TXT_DPI = (TextView) findViewById(R.id.dpiDisplay);
+        final EditText EDIT_DPI = (EditText) findViewById(R.id.txt_dpi);
+
+        EDIT_DPI.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 boolean handled = false;
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    SuUtil.setDensity(v.getContext(), Integer.parseInt(txtDPI.getText().toString()));
+                    SuUtil.setDensity(v.getContext(), Integer.parseInt(EDIT_DPI.getText().toString()));
                     handled = true;
                 }
                 return handled;
             }
         });
+
+        int density = SuUtil.getDensity();
+
+        TXT_DPI.setText(String.format(getString(R.string.dpi_display), density));
+        EDIT_DPI.setText(String.format(getString(R.string.integerString), density));
+
+
     }
 
     public void setDPI(View view) {
-        EditText txtDPI = (EditText) findViewById(R.id.txt_dpi);
-        SuUtil.setDensity(view.getContext(), Integer.parseInt(txtDPI.getText().toString()));
+        final EditText EDIT_DPI = (EditText) findViewById(R.id.txt_dpi);
+
+        SuUtil.setDensity(view.getContext(), Integer.parseInt(EDIT_DPI.getText().toString()));
     }
 }

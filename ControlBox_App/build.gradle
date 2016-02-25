@@ -9,7 +9,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 5
-        versionName "Beta 0.7" + (new Date()).format('yyyyMMddHHmm')
+        versionName "0.7-" + (new Date()).format('yyyyMMddHHmm')
     }
     buildTypes {
 
@@ -19,7 +19,6 @@ android {
         }
     }
 }
-version = "Beta 0.7" + (new Date()).format('yyyyMMddHHmm')
 group = "ch.deletescape"
 
 dependencies {

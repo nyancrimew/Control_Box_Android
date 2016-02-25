@@ -33,7 +33,7 @@
         android:id="@+id/switch_user_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
         android:text="@string/switch_user_header"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -52,12 +52,13 @@
         android:id="@+id/btn_switch_user"
         style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBottom="@+id/txt_uid"
         android:layout_alignEnd="@+id/usersGrid"
         android:layout_toEndOf="@+id/txt_uid"
         android:onClick="switchUser"
-        android:text="@string/btn_switch_user" />
+        android:text="@string/btn_switch_user"
+        android:background="@drawable/bg_button" />
 
     <TextView
         android:id="@+id/switch_user_warning"
@@ -67,5 +68,34 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="@string/switch_user_warning" />
+
+    <TextView
+        android:id="@+id/add_user_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/add_user_header"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txt_uid"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/add_user_header"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btn_add_user"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/btn_switch_user"
+        android:text="@string/btn_add_user"
+        android:background="@drawable/bg_button" />
 
 </RelativeLayout>

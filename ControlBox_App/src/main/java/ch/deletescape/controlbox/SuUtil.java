@@ -10,56 +10,64 @@ import eu.chainfire.libsuperuser.Shell;
 
 /**
  * This is supposed to be a small utility to make it easier to work with root access!
- * Created by Deletescape(Till Kottmann) on 20/02/16.
- * All rights reserved.
+ *
+ * @author Deletescape
+ * @version 1.2.0
+ * @since 20/02/16
  */
 public class SuUtil {
-    private static final boolean IS_ROOTED() {
+    public enum rebootType {
+        /**
+         * This enumerator is used to define how you want to reboot when using {@link SuUtil.doReboot}
+         */
+        REBOOT_NORMAL, REBOOT_SOFT, RESTART_SYSTEMUI, SHUTDOWN, REBOOT_RECOVERY
+    }
+
+    private static boolean IS_ROOTED() {
         return Shell.SU.available();
     }
 
-    public static void doReboot(Context context, RebootType rebootType) {
+    public static void doReboot(Context context, rebootType rebootType) {
         /**
-         * Reboots the device according to the selected RebootType
+         * Reboots the device according to the selected {@link SuUtil.rebootType}
          */
         if (IS_ROOTED()) {
+            String temp = null;
             switch (rebootType) {
                 case REBOOT_NORMAL:
-                    Shell.SU.run("reboot");
+                    temp = "reboot";
                     break;
                 case REBOOT_SOFT:
-                    Shell.SU.run("pkill zygote");
+                    temp = "pkill zygote";
                     break;
                 case RESTART_SYSTEMUI:
-                    Shell.SU.run("pkill com.android.systemui");
+                    temp = "pkill com.android.systemui";
                     break;
                 case SHUTDOWN:
-                    Shell.SU.run("reboot -p");
+                    temp = "reboot -p";
                     break;
                 case REBOOT_RECOVERY:
-                    Shell.SU.run("reboot recovery");
+                    temp = "reboot recovery";
                     break;
             }
+            Shell.SU.run(temp);
         } else {
             noRootToast(context);
         }
     }
 
     public static int getDensity() {
-        /*String temp = Shell.SH.run("wm density").toArray()[1].toString();
-        return temp;*/
+        Object[] temp = Shell.SH.run("wm density").toArray();
         try {
-            String temp = Shell.SH.run("wm density").toArray()[1].toString();
-            return Integer.parseInt(temp.substring(temp.indexOf("Override density:") + 18));
+            return Integer.parseInt(temp[1].toString().substring(temp[1].toString().indexOf("Override density:") + 18));
         } catch (Exception e) {
-            String temp = Shell.SH.run("wm density").toArray()[0].toString();
-            return Integer.parseInt(temp.substring(temp.indexOf("Physical density:") + 18));
+            return Integer.parseInt(temp[0].toString().substring(temp[0].toString().indexOf("Physical density:") + 18));
         }
     }
 
     public static void setDensity(Context context, int dpi) {
         if (IS_ROOTED()) {
-            Shell.SU.run("wm density " + dpi);
+            Shell.SU.run(String.format("wm density %s", dpi));
         } else {
             noRootToast(context);
         }
@@ -75,20 +83,19 @@ public class SuUtil {
                 String uId = userTemp.substring(userTemp.indexOf("{") + 1, userTemp.indexOf(":"));
                 String uName = userTemp.substring(userTemp.indexOf(":") + 1, userTemp.lastIndexOf(":"));
                 String uCurrent = userTemp.contains("running") ? "true" : "false";
-                String[] user = new String[]{uId, uName, uCurrent};
-                userList.add(user);
 
+                userList.add(new String[]{uId, uName, uCurrent});
             }
             return userList;
         } else {
             noRootToast(context);
+            return null;
         }
-        return new ArrayList<>();
     }
 
     public static void switchUser(Context context, int uId) {
         if (IS_ROOTED()) {
-            Shell.SU.run("am switch-user " + uId);
+            Shell.SU.run(String.format("am switch-user %d", uId));
         } else {
             noRootToast(context);
         }
@@ -96,13 +103,6 @@ public class SuUtil {
 
     private static void noRootToast(Context context) {
         Toast.makeText(context, R.string.no_root_msg, Toast.LENGTH_LONG).show();
-    }
-
-    public enum RebootType {
-        /**
-         * This enumerator is used to define how you want to reboot when using ${doReboot}
-         */
-        REBOOT_NORMAL, REBOOT_SOFT, RESTART_SYSTEMUI, SHUTDOWN, REBOOT_RECOVERY
     }
 
 }

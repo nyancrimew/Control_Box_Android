@@ -13,23 +13,23 @@ public class Reboot extends AppCompatActivity {
     }
 
     public void rebootNormal(View view) {
-        SuUtil.doReboot(view.getContext(), SuUtil.RebootType.REBOOT_NORMAL);
+        SuUtil.doReboot(view.getContext(), SuUtil.rebootType.REBOOT_NORMAL);
     }
 
     public void rebootRecovery(View view) {
-        SuUtil.doReboot(view.getContext(), SuUtil.RebootType.REBOOT_RECOVERY);
+        SuUtil.doReboot(view.getContext(), SuUtil.rebootType.REBOOT_RECOVERY);
     }
 
     public void rebootSoft(View view) {
 
-        SuUtil.doReboot(view.getContext(), SuUtil.RebootType.REBOOT_SOFT);
+        SuUtil.doReboot(view.getContext(), SuUtil.rebootType.REBOOT_SOFT);
     }
 
     public void restartSystemUI(View view) {
-        SuUtil.doReboot(view.getContext(), SuUtil.RebootType.RESTART_SYSTEMUI);
+        SuUtil.doReboot(view.getContext(), SuUtil.rebootType.RESTART_SYSTEMUI);
     }
 
     public void Shutdown(View view) {
-        SuUtil.doReboot(view.getContext(), SuUtil.RebootType.SHUTDOWN);
+        SuUtil.doReboot(view.getContext(), SuUtil.rebootType.SHUTDOWN);
     }
 }
