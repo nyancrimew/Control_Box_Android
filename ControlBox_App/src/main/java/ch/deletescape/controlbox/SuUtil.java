@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import eu.chainfire.libsuperuser.Shell;
 
@@ -23,7 +24,7 @@ public class SuUtil {
         REBOOT_NORMAL, REBOOT_SOFT, RESTART_SYSTEMUI, SHUTDOWN, REBOOT_RECOVERY
     }
 
-    private static boolean IS_ROOTED() {
+    public static boolean IS_ROOTED() {
         return Shell.SU.available();
     }
 
@@ -89,19 +90,19 @@ public class SuUtil {
             return userList;
         } else {
             noRootToast(context);
-            return null;
+            return new ArrayList<>();
         }
     }
 
     public static void switchUser(Context context, int uId) {
         if (IS_ROOTED()) {
-            Shell.SU.run(String.format("am switch-user %d", uId));
+            Shell.SU.run(String.format(Locale.US,"am switch-user %d", uId));
         } else {
             noRootToast(context);
         }
     }
 
-    private static void noRootToast(Context context) {
+    public static void noRootToast(Context context) {
         Toast.makeText(context, R.string.no_root_msg, Toast.LENGTH_LONG).show();
     }
 
