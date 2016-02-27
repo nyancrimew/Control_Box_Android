@@ -87,7 +87,9 @@ template {
  */
 
 a {
+color:#282D32;
   background-color: transparent;
+;
 }
 
 /**
@@ -133,6 +135,7 @@ dfn {
  */
 
 h1 {
+    color: #282D32;
   font-size: 2em;
   margin: 0.67em 0;
 }
