@@ -101,7 +101,13 @@ public class SuUtil {
             noRootToast(context);
         }
     }
-
+    public static void addUser(Context context, String name) {
+        if (IS_ROOTED()) {
+            Shell.SU.run(String.format(Locale.US,"pm create-user \"%s\"", name));
+        } else {
+            noRootToast(context);
+        }
+    }
     public static void noRootToast(Context context) {
         Toast.makeText(context, R.string.no_root_msg, Toast.LENGTH_LONG).show();
     }

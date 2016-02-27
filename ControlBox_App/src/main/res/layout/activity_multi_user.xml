@@ -33,7 +33,7 @@
         android:id="@+id/switch_user_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/txt_add_user"
         android:layout_centerHorizontal="true"
         android:text="@string/switch_user_header"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -79,7 +79,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txt_add_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/txt_uid"
@@ -92,10 +92,11 @@
         style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/editText"
+        android:layout_alignBottom="@+id/txt_add_user"
         android:layout_alignParentEnd="true"
         android:layout_alignStart="@+id/btn_switch_user"
         android:text="@string/btn_add_user"
+        android:onClick="addUser"
         android:background="@drawable/bg_button" />
 
 </RelativeLayout>

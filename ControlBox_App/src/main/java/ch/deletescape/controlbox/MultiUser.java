@@ -42,4 +42,9 @@ public class MultiUser extends AppCompatActivity {
         final EditText EDIT_UID = (EditText) findViewById(R.id.txt_uid);
         SuUtil.switchUser(view.getContext(), Integer.parseInt(EDIT_UID.getText().toString()));
     }
+
+    public void addUser(View view) {
+        final EditText EDIT_ADD_USER = (EditText) findViewById(R.id.txt_add_user);
+        SuUtil.addUser(view.getContext(),EDIT_ADD_USER.getText().toString());
+    }
 }
