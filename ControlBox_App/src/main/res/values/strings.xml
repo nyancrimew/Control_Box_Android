@@ -32,4 +32,5 @@
     <string name="btn_add_user">Add user with name</string>
     <string name="btn_remove_user">Remove user with uid</string>
     <string name="remove_user_header">Remove User</string>
+    <string name="activity_label_credits">Credits</string>
 </resources>
