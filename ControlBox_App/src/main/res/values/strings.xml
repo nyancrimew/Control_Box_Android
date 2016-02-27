@@ -30,4 +30,6 @@
     <string name="txt_uid_default_value" translatable="false">0</string>
     <string name="add_user_header">Add User</string>
     <string name="btn_add_user">Add user with name</string>
+    <string name="btn_remove_user">Remove user with uid</string>
+    <string name="remove_user_header">Remove User</string>
 </resources>
