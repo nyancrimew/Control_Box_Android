@@ -52,6 +52,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="@string/main_credits" />
+        android:text="@string/main_credits" android:onClick="credits"/>
 
 </RelativeLayout>

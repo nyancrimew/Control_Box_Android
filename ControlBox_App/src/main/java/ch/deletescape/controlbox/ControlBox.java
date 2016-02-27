@@ -24,4 +24,8 @@ public class ControlBox extends AppCompatActivity {
     public void startMultiuser(View view) {
         startActivity(new Intent(ControlBox.this, MultiUser.class));
     }
+
+    public void credits(View view) {
+        startActivity(new Intent(ControlBox.this, Credits.class));
+    }
 }
