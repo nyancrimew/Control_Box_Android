@@ -46,5 +46,11 @@ public class MultiUser extends AppCompatActivity {
     public void addUser(View view) {
         final EditText EDIT_ADD_USER = (EditText) findViewById(R.id.txt_add_user);
         SuUtil.addUser(view.getContext(),EDIT_ADD_USER.getText().toString());
+        refreshActivity();
+    }
+
+    private void refreshActivity() {
+        finish();
+        startActivity(getIntent());
     }
 }
