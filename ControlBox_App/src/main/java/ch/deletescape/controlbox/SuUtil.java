@@ -101,6 +101,13 @@ public class SuUtil {
             noRootToast(context);
         }
     }
+    public static void removeUser(Context context, int uId) {
+        if (IS_ROOTED()) {
+            Shell.SU.run(String.format(Locale.US,"pm remove-user %d", uId));
+        } else {
+            noRootToast(context);
+        }
+    }
     public static void addUser(Context context, String name) {
         if (IS_ROOTED()) {
             Shell.SU.run(String.format(Locale.US,"pm create-user \"%s\"", name));
