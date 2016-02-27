@@ -18,17 +18,17 @@ public class MultiUser extends AppCompatActivity {
 
         final GridView GRID_USERS = (GridView) findViewById(R.id.usersGrid);
         ArrayList<String> usersList = new ArrayList<>();
-        ArrayList<String[]> usersRaw = SuUtil.getUsers(GRID_USERS.getContext());
+        ArrayList<Object[]> usersRaw = SuUtil.getUsers(GRID_USERS.getContext());
 
 
         usersList.add(getString(R.string.table_header_uid));
         usersList.add(getString(R.string.table_header_uname));
         usersList.add(getString(R.string.table_header_iscurrent));
 
-        for (String[] user : usersRaw) {
-            usersList.add(user[0]);
-            usersList.add(user[1]);
-            usersList.add(user[2]);
+        for (Object[] user : usersRaw) {
+            usersList.add(user[0].toString());
+            usersList.add(user[1].toString());
+            usersList.add(user[2].toString());
         }
 
         GRID_USERS.setAdapter(new ArrayAdapter<>(

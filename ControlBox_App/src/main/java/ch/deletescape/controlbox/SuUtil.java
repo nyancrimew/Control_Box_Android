@@ -19,7 +19,7 @@ import eu.chainfire.libsuperuser.Shell;
 public class SuUtil {
     public enum rebootType {
         /**
-         * This enumerator is used to define how you want to reboot when using {@link SuUtil.doReboot}
+         * This enumerator is used to define how you want to reboot
          */
         REBOOT_NORMAL, REBOOT_SOFT, RESTART_SYSTEMUI, SHUTDOWN, REBOOT_RECOVERY
     }
@@ -74,18 +74,18 @@ public class SuUtil {
         }
     }
 
-    public static ArrayList<String[]> getUsers(Context context) {
+    public static ArrayList<Object[]> getUsers(Context context) {
         if (IS_ROOTED()) {
-            ArrayList<String[]> userList = new ArrayList<>();
+            ArrayList<Object[]> userList = new ArrayList<>();
             List<String> tempList = Shell.SU.run("pm list users");
             Object[] temp = tempList.toArray();
             for (int i = 1; i < temp.length; i++) {
                 String userTemp = temp[i].toString();
-                String uId = userTemp.substring(userTemp.indexOf("{") + 1, userTemp.indexOf(":"));
+                Integer uId = Integer.parseInt(userTemp.substring(userTemp.indexOf("{") + 1, userTemp.indexOf(":")));
                 String uName = userTemp.substring(userTemp.indexOf(":") + 1, userTemp.lastIndexOf(":"));
-                String uCurrent = userTemp.contains("running") ? "true" : "false";
+                Boolean uCurrent = userTemp.contains("running");
 
-                userList.add(new String[]{uId, uName, uCurrent});
+                userList.add(new Object[]{uId,uName,uCurrent});
             }
             return userList;
         } else {
