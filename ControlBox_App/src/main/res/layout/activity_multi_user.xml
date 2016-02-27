@@ -14,10 +14,10 @@
         android:id="@+id/users_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/switch_user_warning"
-        android:layout_centerHorizontal="true"
         android:text="@string/users_header"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/txt_uid"
+        android:layout_centerHorizontal="true" />
 
     <GridView
         android:id="@+id/usersGrid"
@@ -33,10 +33,10 @@
         android:id="@+id/switch_user_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_add_user"
-        android:layout_centerHorizontal="true"
         android:text="@string/switch_user_header"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/txt_remove_uid"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/txt_uid"
@@ -61,22 +61,22 @@
         android:background="@drawable/bg_button" />
 
     <TextView
-        android:id="@+id/switch_user_warning"
+        android:id="@+id/multiuser_warning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_uid"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="@string/switch_user_warning" />
+        android:text="@string/multiuser_warning"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/add_user_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:text="@string/add_user_header"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/multiuser_warning"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/txt_add_user"
@@ -98,5 +98,34 @@
         android:text="@string/btn_add_user"
         android:onClick="addUser"
         android:background="@drawable/bg_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Remove User"
+        android:id="@+id/remove_user_header"
+        android:layout_below="@+id/btn_add_user"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_remove_uid"
+        android:layout_below="@+id/remove_user_header"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/btn_add_user" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Remove user with uid"
+        android:id="@+id/btn_remove_user"
+        android:layout_alignBottom="@+id/txt_remove_uid"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/btn_add_user"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:background="@drawable/bg_button"
+        android:layout_below="@+id/remove_user_header" />
 
 </RelativeLayout>

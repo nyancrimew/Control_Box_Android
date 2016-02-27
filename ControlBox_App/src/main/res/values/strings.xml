@@ -23,7 +23,7 @@
     <string name="main_credits">Control Box is an app created by Deletescape (Till Kottmann)\n Copyright © 2016 Deletescape Media. All rights reserved.</string>
     <string name="no_root_msg">Your device is not ROOTED :(</string>
     <string name="switch_user_header">Switch User</string>
-    <string name="switch_user_warning">WARNING: This might not work on all devices! If you experience any problems after switching you will get back to your main user after a reboot!</string>
+    <string name="multiuser_warning">WARNING: These features not work on all devices! If you experience any problems after switching you will get back to your main user after a reboot!</string>
     <string name="btn_switch_user">Switch to new UID</string>
     <string name="dpiDisplay_demo_string">Current LCD Density: xxxdpi</string>
     <string name="txt_dpi_demo_value" translatable="false">xxx</string>
