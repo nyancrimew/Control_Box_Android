@@ -5,5 +5,5 @@ package ch.deletescape.controlbox;
  * All rights reserved.
  */
 final class CreditsText {
-    final static String DELETESCAPE_PART = "This application (in the following referred to as \'APP\') is a project by Till Kottmann. This is just his hobby and so he is not resopnsible for anything (including atomic warfare). This app is free but if you really like it Till would always really appreciate a donation here <insert donation link>";
+    final static String DELETESCAPE_PART = "This application (in the following referred to as \'APP\') is a project by Till Kottmann. This is just his hobby and so he is not resopnsible for anything (including atomic warfare). This app is free but if you really like it Till would always really appreciate a donation here: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZMUH9HW7655JA";
 }
