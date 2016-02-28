@@ -5,7 +5,7 @@
     <string name="btn_reboot_soft">Softreboot</string>
     <string name="btm_main_rebooter">Rebooter</string>
     <string name="btn_main_lookandfeel"><![CDATA[Look & Feel]]></string>
-    <string name="dpi_display">Current LCD Density: %DPI</string>
+    <string name="dpi_display">Current LCD Density: %dDPI</string>
     <string name="integerString" translatable="false">%d</string>
     <string name="dpi_header_text">LCD Density</string>
     <string name="btn_set_dpi">Set new DPI</string>
