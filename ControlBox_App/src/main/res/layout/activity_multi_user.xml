@@ -38,15 +38,14 @@
         android:layout_below="@+id/txt_remove_uid"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <Spinner
         android:id="@+id/txt_uid"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/switch_user_header"
         android:layout_toStartOf="@+id/users_header"
         android:ems="10"
-        android:inputType="number"
-        android:text="@string/txt_uid_default_value" />
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btn_switch_user"
@@ -124,10 +123,11 @@
         android:id="@+id/btn_remove_user"
         android:layout_alignBottom="@+id/txt_remove_uid"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/btn_add_user"
         style="@android:style/Widget.Material.Button.Borderless.Colored"
         android:background="@drawable/bg_button"
         android:onClick="removeUser"
-        android:layout_below="@+id/remove_user_header" />
+        android:layout_below="@+id/remove_user_header"
+        android:layout_toEndOf="@+id/txt_remove_uid" />
+
 
 </RelativeLayout>

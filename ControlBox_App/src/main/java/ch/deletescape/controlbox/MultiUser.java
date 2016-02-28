@@ -20,6 +20,8 @@ public class MultiUser extends AppCompatActivity {
 
         final GridView GRID_USERS = (GridView) findViewById(R.id.usersGrid);
         final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.txt_remove_uid);
+        final Spinner EDIT_UID = (Spinner) findViewById(R.id.txt_uid);
+
         ArrayList<String> usersList = new ArrayList<>();
 
 
@@ -47,12 +49,14 @@ public class MultiUser extends AppCompatActivity {
         ArrayAdapter<String> spinner_user_adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, usersList2);
 
         EDIT_REMOVE_UID.setAdapter(spinner_user_adapter);
+        EDIT_UID.setAdapter(spinner_user_adapter);
 
     }
 
     public void switchUser(View view) {
-        final EditText EDIT_UID = (EditText) findViewById(R.id.txt_uid);
-        SuUtil.switchUser(view.getContext(), Integer.parseInt(EDIT_UID.getText().toString()));
+        final Spinner EDIT_UID = (Spinner) findViewById(R.id.txt_uid);
+        String selected = EDIT_UID.getSelectedItem().toString();
+        SuUtil.switchUser(view.getContext(), Integer.parseInt(selected.substring(0, selected.indexOf(' '))));
     }
 
     public void addUser(View view) {
