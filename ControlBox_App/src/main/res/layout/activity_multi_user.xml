@@ -10,54 +10,16 @@
     tools:context="ch.deletescape.controlbox.MultiUser">
 
 
-    <TextView
-        android:id="@+id/users_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/users_header"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/btn_switch_user"
-        android:layout_centerHorizontal="true" />
-
-    <GridView
-        android:id="@+id/usersGrid"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/users_header"
-        android:drawSelectorOnTop="false"
-        android:fastScrollAlwaysVisible="false"
-        android:numColumns="3" />
-
-    <TextView
-        android:id="@+id/switch_user_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/switch_user_header"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/txt_remove_uid"
-        android:layout_centerHorizontal="true" />
-
-    <Spinner
-        android:id="@+id/txt_uid"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/switch_user_header"
-        android:layout_toStartOf="@+id/users_header"
-        android:ems="10"
-        android:inputType="number" />
-
     <Button
         android:id="@+id/btn_switch_user"
         style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/txt_uid"
-        android:layout_alignEnd="@+id/usersGrid"
-        android:layout_toEndOf="@+id/txt_uid"
         android:onClick="switchUser"
         android:text="@string/btn_switch_user"
-        android:background="@drawable/bg_button" />
+        android:background="@drawable/bg_button"
+        android:layout_below="@+id/btn_remove_user"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/multiuser_warning"
@@ -65,8 +27,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/multiuser_warning"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
 
     <TextView
         android:id="@+id/add_user_header"
@@ -74,17 +36,17 @@
         android:layout_height="wrap_content"
         android:text="@string/add_user_header"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/multiuser_warning"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/txt_add_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txt_uid"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/add_user_header"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_toStartOf="@+id/btn_add_user" />
 
     <Button
         android:id="@+id/btn_add_user"
@@ -93,10 +55,10 @@
         android:layout_height="50dp"
         android:layout_alignBottom="@+id/txt_add_user"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/btn_switch_user"
         android:text="@string/btn_add_user"
         android:onClick="addUser"
-        android:background="@drawable/bg_button" />
+        android:background="@drawable/bg_button"
+        android:layout_alignStart="@+id/add_user_header" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -110,24 +72,21 @@
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:id="@+id/txt_remove_uid"
+        android:id="@+id/spinner_user"
+        android:inputType="number"
         android:layout_below="@+id/remove_user_header"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/btn_add_user"
-        android:inputType="number" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="@string/btn_remove_user"
         android:id="@+id/btn_remove_user"
-        android:layout_alignBottom="@+id/txt_remove_uid"
-        android:layout_alignParentEnd="true"
         style="@android:style/Widget.Material.Button.Borderless.Colored"
         android:background="@drawable/bg_button"
         android:onClick="removeUser"
-        android:layout_below="@+id/remove_user_header"
-        android:layout_toEndOf="@+id/txt_remove_uid" />
+        android:layout_below="@+id/spinner_user"
+        android:layout_alignEnd="@+id/btn_add_user" />
 
 
 </RelativeLayout>

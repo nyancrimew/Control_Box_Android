@@ -22,15 +22,15 @@
     <string name="main_credits">Control Box is an app created by Deletescape (Till Kottmann)\n Copyright © 2016 Deletescape Media. All rights reserved.</string>
     <string name="no_root_msg">Your device is not rooted :(</string>
     <string name="switch_user_header">Switch user</string>
-    <string name="multiuser_warning">WARNING: These features not work on all devices! If you experience any problems after switching you will get back to your main user after a reboot!\nPlease also note that most devices only support up to 4 users and not more.</string>
-    <string name="btn_switch_user">Switch to new UID</string>
+    <string name="multiuser_warning">WARNING:\nThese features not work on all devices! If you experience any problems after switching you will get back to your main user after a reboot!\nPlease also note that most devices only support up to 4 users and not more.</string>
+    <string name="btn_switch_user">Switch to selected</string>
     <string name="dpiDisplay_demo_string">Current LCD Density: xxxDPI</string>
     <string name="txt_dpi_demo_value" translatable="false">xxx</string>
     <string name="txt_uid_default_value" translatable="false">0</string>
     <string name="add_user_header">Add User</string>
     <string name="btn_add_user">Add new user with name</string>
-    <string name="btn_remove_user">Remove user with UID</string>
-    <string name="remove_user_header">Remove user</string>
+    <string name="btn_remove_user">Remove selected</string>
+    <string name="remove_user_header">Switch / Remove</string>
     <string name="activity_label_credits">Credits</string>
     <string name="table_header_uid">UID</string>
 </resources>

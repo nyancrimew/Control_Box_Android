@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -17,45 +16,23 @@ public class MultiUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_user);
+        final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.spinner_user);
 
-        final GridView GRID_USERS = (GridView) findViewById(R.id.usersGrid);
-        final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.txt_remove_uid);
-        final Spinner EDIT_UID = (Spinner) findViewById(R.id.txt_uid);
 
         ArrayList<String> usersList = new ArrayList<>();
 
-
-        usersList.add(getString(R.string.table_header_uid));
-        usersList.add(getString(R.string.table_header_uname));
-        usersList.add(getString(R.string.table_header_iscurrent));
-
         for (Object[] user : usersRaw) {
-            usersList.add(user[0].toString());
-            usersList.add(user[1].toString());
-            usersList.add(user[2].toString());
+            usersList.add(String.format("%s - %s", user[0].toString(), user[1].toString()));
         }
-
-        GRID_USERS.setAdapter(new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                usersList));
-
-
-        ArrayList<String> usersList2 = new ArrayList<>();
-
-        for (Object[] user : usersRaw) {
-            usersList2.add(String.format("%s - %s", user[0].toString(), user[1].toString()));
-        }
-        ArrayAdapter<String> spinner_user_adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, usersList2);
+        ArrayAdapter<String> spinner_user_adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, usersList);
 
         EDIT_REMOVE_UID.setAdapter(spinner_user_adapter);
-        EDIT_UID.setAdapter(spinner_user_adapter);
 
     }
 
     public void switchUser(View view) {
-        final Spinner EDIT_UID = (Spinner) findViewById(R.id.txt_uid);
-        String selected = EDIT_UID.getSelectedItem().toString();
+        final Spinner SPINNER_USER = (Spinner) findViewById(R.id.spinner_user);
+        String selected = SPINNER_USER.getSelectedItem().toString();
         SuUtil.switchUser(view.getContext(), Integer.parseInt(selected.substring(0, selected.indexOf(' '))));
     }
 
@@ -66,8 +43,8 @@ public class MultiUser extends AppCompatActivity {
     }
 
     public void removeUser(View view) {
-        final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.txt_remove_uid);
-        String selected = EDIT_REMOVE_UID.getSelectedItem().toString();
+        final Spinner SPINNER_USER = (Spinner) findViewById(R.id.spinner_user);
+        String selected = SPINNER_USER.getSelectedItem().toString();
         SuUtil.removeUser(view.getContext(), Integer.parseInt(selected.substring(0, selected.indexOf(' '))));
         refreshActivity();
     }
