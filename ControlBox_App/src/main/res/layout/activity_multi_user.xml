@@ -45,8 +45,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/add_user_header"
-        android:inputType="text"
-        android:layout_toStartOf="@+id/btn_add_user" />
+        android:inputType="text|textCapWords|textAutoComplete|textAutoCorrect"
+        android:layout_toStartOf="@+id/btn_add_user"
+        android:singleLine="true"
+        android:hint="Username" />
 
     <Button
         android:id="@+id/btn_add_user"
@@ -75,7 +77,9 @@
         android:id="@+id/spinner_user"
         android:inputType="number"
         android:layout_below="@+id/remove_user_header"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dialog"
+        android:touchscreenBlocksFocus="false" />
 
     <Button
         android:layout_width="wrap_content"
