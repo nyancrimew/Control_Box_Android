@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="@string/users_header"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/txt_uid"
+        android:layout_below="@+id/btn_switch_user"
         android:layout_centerHorizontal="true" />
 
     <GridView
@@ -108,9 +108,9 @@
         android:layout_below="@+id/btn_add_user"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <Spinner
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/txt_remove_uid"
         android:layout_below="@+id/remove_user_header"
         android:layout_alignParentStart="true"

@@ -6,10 +6,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 
 public class MultiUser extends AppCompatActivity {
+    private ArrayList<Object[]> usersRaw = SuUtil.getUsers(this.getBaseContext());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +19,8 @@ public class MultiUser extends AppCompatActivity {
         setContentView(R.layout.activity_multi_user);
 
         final GridView GRID_USERS = (GridView) findViewById(R.id.usersGrid);
+        final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.txt_remove_uid);
         ArrayList<String> usersList = new ArrayList<>();
-        ArrayList<Object[]> usersRaw = SuUtil.getUsers(GRID_USERS.getContext());
 
 
         usersList.add(getString(R.string.table_header_uid));
@@ -36,6 +38,16 @@ public class MultiUser extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 usersList));
 
+
+        ArrayList<String> usersList2 = new ArrayList<>();
+
+        for (Object[] user : usersRaw) {
+            usersList2.add(String.format("%s - %s", user[0].toString(), user[1].toString()));
+        }
+        ArrayAdapter<String> spinner_user_adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, usersList2);
+
+        EDIT_REMOVE_UID.setAdapter(spinner_user_adapter);
+
     }
 
     public void switchUser(View view) {
@@ -50,8 +62,9 @@ public class MultiUser extends AppCompatActivity {
     }
 
     public void removeUser(View view) {
-        final EditText EDIT_REMOVE_UID = (EditText) findViewById(R.id.txt_remove_uid);
-        SuUtil.removeUser(view.getContext(), Integer.parseInt(EDIT_REMOVE_UID.getText().toString()));
+        final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.txt_remove_uid);
+        String selected = EDIT_REMOVE_UID.getSelectedItem().toString();
+        SuUtil.removeUser(view.getContext(), Integer.parseInt(selected.substring(0, selected.indexOf(' '))));
         refreshActivity();
     }
 
