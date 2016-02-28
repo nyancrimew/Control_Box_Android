@@ -1,0 +1,12 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+ControlBox_App/ControlBox_App-release.apk.zip
+ControlBox_App/ControlBox_App-release.apk
+
+*.apk
