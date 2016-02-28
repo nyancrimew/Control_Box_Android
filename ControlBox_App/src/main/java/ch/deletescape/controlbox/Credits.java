@@ -22,7 +22,8 @@ public class Credits extends AppCompatActivity {
         String line;
         try {
             while ((line = bufferedReader.readLine()) != null) {
-                text.append(line + '\n');
+                text.append(line);
+                text.append('\n');
             }
             bufferedReader.close();
 
