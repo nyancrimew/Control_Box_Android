@@ -3,10 +3,13 @@ package ch.deletescape.controlbox;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -31,6 +34,17 @@ public class MultiUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_user);
         final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.spinner_user);
+        ((EditText)findViewById(R.id.txt_add_user)).setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    addUser(v);
+                    handled = true;
+                }
+                return handled;
+            }
+        });;
 
 
         ArrayList<String> usersList = new ArrayList<>();
