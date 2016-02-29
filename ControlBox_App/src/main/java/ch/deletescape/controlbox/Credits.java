@@ -15,7 +15,7 @@ public class Credits extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
-        final TextView CREDITS_TEXT = (TextView) findViewById(R.id.credits_text);
+
         InputStream is = this.getResources().openRawResource(R.raw.license);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is));
         StringBuffer text = new StringBuffer("");
@@ -30,6 +30,6 @@ public class Credits extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        CREDITS_TEXT.setText(text);
+        ((TextView) findViewById(R.id.credits_text)).setText(text);
     }
 }
