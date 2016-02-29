@@ -14,16 +14,13 @@ public class LookAndFeel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_look_and_feel);
-
-        final TextView TXT_DPI = (TextView) findViewById(R.id.dpiDisplay);
-        final EditText EDIT_DPI = (EditText) findViewById(R.id.txt_dpi);
-
-        EDIT_DPI.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        
+        ((EditText) findViewById(R.id.txt_dpi)).setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 boolean handled = false;
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    SuUtil.setDensity(v.getContext(), Integer.parseInt(EDIT_DPI.getText().toString()));
+                    setDPI(v);
                     handled = true;
                 }
                 return handled;
@@ -32,8 +29,8 @@ public class LookAndFeel extends AppCompatActivity {
 
         int density = SuUtil.getDensity();
 
-        TXT_DPI.setText(String.format(getString(R.string.dpi_display), density));
-        EDIT_DPI.setText(String.format(getString(R.string.integerString), density));
+        ((TextView) findViewById(R.id.dpiDisplay)).setText(String.format(getString(R.string.dpi_display), density));
+        ((EditText) findViewById(R.id.txt_dpi)).setText(String.format(getString(R.string.integerString), density));
 
 
     }
@@ -45,6 +42,6 @@ public class LookAndFeel extends AppCompatActivity {
     }
 
     public void resetDPI(View view) {
-        SuUtil.setDensity(view.getContext(),SuUtil.getPhysicalDensity());
+        SuUtil.setDensity(view.getContext(), SuUtil.getPhysicalDensity());
     }
 }
