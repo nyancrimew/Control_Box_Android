@@ -11,7 +11,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class MultiUser extends AppCompatActivity {
-    private ArrayList<Object[]> usersRaw = SuUtil.getUsers(this.getBaseContext());
+    private ArrayList<Object[]> usersRaw = new ArrayList<>();
 
 
     private void showWait(ProgressDialog progress) {
@@ -26,6 +26,8 @@ public class MultiUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        usersRaw = SuUtil.getUsers(this.getBaseContext());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_user);
         final Spinner EDIT_REMOVE_UID = (Spinner) findViewById(R.id.spinner_user);
