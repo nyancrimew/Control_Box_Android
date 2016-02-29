@@ -30,24 +30,24 @@
         android:id="@+id/txt_dpi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/header_dpi"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/dpiDisplay"
         android:ems="10"
         android:inputType="number"
-        android:text="@string/txt_dpi_demo_value" />
+        android:text="@string/txt_dpi_demo_value"
+        android:layout_toStartOf="@+id/btn_set_dpi" />
 
     <Button
         android:id="@+id/btn_set_dpi"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/txt_dpi"
-        android:layout_toEndOf="@+id/header_dpi"
         android:background="@drawable/bg_button"
         android:onClick="setDPI"
-        android:text="@string/btn_set_dpi" />
+        android:text="@string/btn_set_dpi"
+        android:layout_below="@+id/dpiDisplay"
+        android:layout_alignStart="@+id/header_dpi"
+        android:layout_alignEnd="@+id/dpiDisplay" />
 
     <TextView
         android:id="@+id/dpi_description"
@@ -56,6 +56,18 @@
         android:layout_below="@+id/header_dpi"
         android:layout_centerHorizontal="true"
         android:text="@string/dpi_description" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:id="@+id/btn_reset_dpi"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_button"
+        android:onClick="resetDPI"
+        android:text="Reset to stock"
+        android:layout_alignBottom="@+id/btn_set_dpi"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/header_dpi" />
 
 
 </RelativeLayout>

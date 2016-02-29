@@ -17,6 +17,8 @@ import eu.chainfire.libsuperuser.Shell;
  * @since 20/02/16
  */
 public class SuUtil {
+
+
     public enum rebootType {
         /**
          * This enumerator is used to define how you want to reboot
@@ -58,17 +60,23 @@ public class SuUtil {
     }
 
     public static int getDensity() {
-        Object[] temp = Shell.SH.run("wm density").toArray();
+
         try {
-            return Integer.parseInt(temp[1].toString().substring(temp[1].toString().indexOf("Override density:") + 18));
+            String temp = Shell.SH.run("wm density").toArray()[1].toString();
+            return Integer.parseInt(temp.substring(temp.indexOf("Override density:") + 18));
         } catch (Exception e) {
-            return Integer.parseInt(temp[0].toString().substring(temp[0].toString().indexOf("Physical density:") + 18));
+            return getPhysicalDensity();
         }
+    }
+
+    public static int getPhysicalDensity() {
+        String temp = Shell.SH.run("wm density").toArray()[0].toString();
+        return Integer.parseInt(temp.substring(temp.indexOf("Physical density:") + 18));
     }
 
     public static void setDensity(Context context, int dpi) {
         if (IS_ROOTED()) {
-            Shell.SU.run(String.format("wm density %s", dpi));
+            Shell.SU.run(String.format(Locale.US, "wm density %s", dpi));
         } else {
             noRootToast(context);
         }
@@ -81,11 +89,10 @@ public class SuUtil {
             Object[] temp = tempList.toArray();
             for (int i = 1; i < temp.length; i++) {
                 String userTemp = temp[i].toString();
-                Integer uId = Integer.parseInt(userTemp.substring(userTemp.indexOf("{") + 1, userTemp.indexOf(":")));
-                String uName = userTemp.substring(userTemp.indexOf(":") + 1, userTemp.lastIndexOf(":"));
-                Boolean uCurrent = userTemp.contains("running");
+                Integer uId = Integer.parseInt(userTemp.substring(userTemp.indexOf('{') + 1, userTemp.indexOf(':')));
+                String uName = userTemp.substring(userTemp.indexOf(':') + 1, userTemp.lastIndexOf(':'));
 
-                userList.add(new Object[]{uId,uName,uCurrent});
+                userList.add(new Object[]{uId, uName});
             }
             return userList;
         } else {
@@ -96,25 +103,28 @@ public class SuUtil {
 
     public static void switchUser(Context context, int uId) {
         if (IS_ROOTED()) {
-            Shell.SU.run(String.format(Locale.US,"am switch-user %d", uId));
+            Shell.SU.run(String.format(Locale.US, "am switch-user %d", uId));
         } else {
             noRootToast(context);
         }
     }
+
     public static void removeUser(Context context, int uId) {
         if (IS_ROOTED()) {
-            Shell.SU.run(String.format(Locale.US,"pm remove-user %d", uId));
+            Shell.SU.run(String.format(Locale.US, "pm remove-user %d", uId));
         } else {
             noRootToast(context);
         }
     }
+
     public static void addUser(Context context, String name) {
         if (IS_ROOTED()) {
-            Shell.SU.run(String.format(Locale.US,"pm create-user \"%s\"", name));
+            Shell.SU.run(String.format(Locale.US, "pm create-user \"%s\"", name));
         } else {
             noRootToast(context);
         }
     }
+
     public static void noRootToast(Context context) {
         Toast.makeText(context, R.string.no_root_msg, Toast.LENGTH_LONG).show();
     }

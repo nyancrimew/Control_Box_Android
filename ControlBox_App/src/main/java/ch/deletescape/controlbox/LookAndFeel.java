@@ -43,4 +43,8 @@ public class LookAndFeel extends AppCompatActivity {
 
         SuUtil.setDensity(view.getContext(), Integer.parseInt(EDIT_DPI.getText().toString()));
     }
+
+    public void resetDPI(View view) {
+        SuUtil.setDensity(view.getContext(),SuUtil.getPhysicalDensity());
+    }
 }
