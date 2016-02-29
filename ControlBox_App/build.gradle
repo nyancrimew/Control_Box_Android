@@ -9,7 +9,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
-        versionName "v0.2.3-beta-" + (new Date()).format('yyyyMMddHHmm')
+        versionName "v0.2.4-beta-" + (new Date()).format('yyyyMMddHHmm')
     }
     buildTypes {
 
