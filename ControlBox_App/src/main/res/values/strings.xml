@@ -27,4 +27,8 @@
     <string name="btn_remove_user">Remove selected</string>
     <string name="remove_user_header">Switch / Remove</string>
     <string name="activity_label_credits">Credits</string>
+    <string name="progress_remove_user_title">Removing user</string>
+    <string name="progress_remove_user_description">This should not take too long...</string>
+    <string name="progress_add_user_title">Adding user</string>
+    <string name="progress_add_user_description">This should not take too long...</string>
 </resources>
