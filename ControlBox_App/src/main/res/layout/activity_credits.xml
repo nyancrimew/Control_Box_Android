@@ -9,15 +9,11 @@
     android:paddingTop="@dimen/layout_padding_credits"
     tools:context="ch.deletescape.controlbox.Credits">
 
-    <ScrollView
+
+    <TextView
+        android:id="@+id/credits_text"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/scrollView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/credits_text"
-            android:autoLink="web" />
-    </ScrollView>
+        android:autoLink="web"
+        android:scrollbars="vertical" />
 </LinearLayout>
