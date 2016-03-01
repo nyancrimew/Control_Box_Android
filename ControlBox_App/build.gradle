@@ -12,13 +12,15 @@ android {
         versionName "v0.2.5-beta-" + (new Date()).format('yyyyMMddHHmm')
     }
     buildTypes {
-
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
         }
-}}
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
 group = "ch.deletescape"
 
 dependencies {
