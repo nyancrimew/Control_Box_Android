@@ -4,6 +4,8 @@ This application is a project by Till Kottmann (Deletescape). This is just my ho
 
 The library used for handling SU permissions is libsuperuser by (the amazing) chainfire, go there and thank him, the master of root! (his repo can be found here: https://github.com/Chainfire/libsuperuser)
 
+The library used for the update notifications is AppUpdater by javiersantos his repo can be found here: https://github.com/javiersantos/AppUpdater
+
 LICENSE
 
 The MIT License (MIT)
