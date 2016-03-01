@@ -18,7 +18,7 @@ public class ControlBox extends AppCompatActivity {
         new AppUpdater(this.getBaseContext())
                 .setUpdateFrom(UpdateFrom.GITHUB)
                 .setGitHubUserAndRepo("deletescape", "Control_Box_Android")
-                .setDisplay(Display.SNACKBAR)
+                .setDisplay(Display.NOTIFICATION)
                 .showAppUpdated(true)
                 .start();
     }
