@@ -26,3 +26,4 @@ notifications:
       - deletescape@deletescape.ch
     on_success: change # default: change
     on_failure: always # default: always
+    slack: deletescape:tRDXgYB3BRLDbYr9afrN0kGk
