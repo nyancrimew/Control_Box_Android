@@ -7,7 +7,7 @@
     tools:context="ch.deletescape.controlbox.Credits">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+        android:id="@+id/credits_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
@@ -15,18 +15,11 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-
-    <ImageButton
-        android:id="@+id/updateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="checkForUpdate" />
-
     <TextView
         android:id="@+id/credits_text"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/my_toolbar"
+        android:layout_below="@+id/credits_tool_bar"
         android:autoLink="web"
         android:paddingBottom="@dimen/layout_padding_credits"
         android:paddingLeft="@dimen/layout_padding_credits"

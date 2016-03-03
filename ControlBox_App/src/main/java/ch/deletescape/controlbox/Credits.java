@@ -17,7 +17,7 @@ public class Credits extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.credits_tool_bar);
         setSupportActionBar(myToolbar);
 
         InputStream is = this.getResources().openRawResource(R.raw.license);
