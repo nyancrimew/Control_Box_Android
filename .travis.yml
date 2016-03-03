@@ -18,3 +18,11 @@ before_script:
 
 script:
     - ./gradlew clean test
+
+notifications:
+  email:
+    recipients:
+      - deletescape@outlook.com
+      - deletescape@deletescape.ch
+    on_success: change # default: change
+    on_failure: always # default: always
