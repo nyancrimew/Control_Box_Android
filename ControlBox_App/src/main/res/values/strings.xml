@@ -31,4 +31,5 @@
     <string name="progress_remove_user_description">This should not take too long...</string>
     <string name="progress_add_user_title">Adding user</string>
     <string name="progress_add_user_description">This should not take too long...</string>
+    <string name="search_update">Search Update</string>
 </resources>
